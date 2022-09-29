@@ -1,0 +1,1 @@
+ This app is usually used for searching anything like place.city,restaurant,resort on map. also they can see details of particular selected location. user can see selected location using map types like standard,satellite,hybrid.
