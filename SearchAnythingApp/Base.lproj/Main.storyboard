@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIl-dh-czD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SearchAnythingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gZ7-eL-XzB">
+                                <rect key="frame" x="0.0" y="143" width="414" height="719"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gbf-Y0-vAf"/>
+                                </connections>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D9I-EM-PEk">
+                                <rect key="frame" x="0.0" y="98" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlClick:" destination="BYZ-38-t0r" eventType="valueChanged" id="MSb-U9-but"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gZ7-eL-XzB" firstAttribute="top" secondItem="D9I-EM-PEk" secondAttribute="bottom" constant="14" id="WlC-QZ-49Z"/>
+                            <constraint firstItem="gZ7-eL-XzB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yjo-j8-Vra"/>
+                            <constraint firstItem="gZ7-eL-XzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dsw-mD-gjj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D9I-EM-PEk" secondAttribute="trailing" id="gob-fJ-o8u"/>
+                            <constraint firstItem="gZ7-eL-XzB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iJY-s7-Cca"/>
+                            <constraint firstItem="D9I-EM-PEk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="k7g-JD-TDS"/>
+                            <constraint firstItem="D9I-EM-PEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sm6-SQ-553"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TOt-kh-nfH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Zru-iz-hRw">
+                            <connections>
+                                <action selector="searchAnythingButtonTapped:" destination="BYZ-38-t0r" id="wVR-Vb-CFo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="gZ7-eL-XzB" id="c0e-sH-uhr"/>
+                        <outlet property="segmentControl" destination="D9I-EM-PEk" id="m5x-l9-NIM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YxG-rt-x1N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fIl-dh-czD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKT-hs-IrD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ebT-vO-WMo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xok-wg-4jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
